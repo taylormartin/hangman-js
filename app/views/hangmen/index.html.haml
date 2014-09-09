@@ -9,6 +9,7 @@
       %th
       %th Board
       %th Misses
+      %th Challenger
   %tbody
     - @hangmen.each do |game|
       %tr{ class: row_status_class(game) }
@@ -24,6 +25,9 @@
             %span.label.label-success Won
           - elsif game.lost?
             %span.label.label-danger Lost
+        %td
+          - if game.challenger != nil
+            = User.find_by_id(game.challenger).email
     %tr
       %td{ colspan: 3 }
         = link_to 'New Game', hangmen_path, method: :post, class: 'btn btn-success btn-large'

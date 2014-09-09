@@ -16,8 +16,8 @@ gem 'devise'
 gem 'cancancan'
 
 group :development do
-  gem 'better_errors'
-  gem 'binding_of_caller'
+  # gem 'better_errors'
+  # gem 'binding_of_caller'
   gem 'pry-rails'
   gem 'quiet_assets'
   gem 'spring'

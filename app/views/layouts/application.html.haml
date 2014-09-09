@@ -20,7 +20,9 @@
 
         %ul.nav.navbar-nav
           / Main links will go here
-          %li= link_to "Hangman", hangmen_path
+          - if current_user
+            %li= link_to "Hangman", hangmen_path
+            %li= link_to "Challenge", hangmen_challenge_path
 
         %ul.nav.navbar-nav.pull-right
           - if current_user

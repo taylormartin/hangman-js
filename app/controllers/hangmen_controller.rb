@@ -19,4 +19,14 @@ class HangmenController < ApplicationController
     hangman.guess params[:guess] unless hangman.finished?
     redirect_to hangman
   end
+
+  def challenge
+    #currently nothing in this controller
+  end
+
+  def create_challenge
+    current_user.create_challenges(params)
+    redirect_to hangmen_challenge_path, notice: "Challenge made!"
+  end
+
 end

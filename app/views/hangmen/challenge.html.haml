@@ -1,0 +1,30 @@
+%h3 Challenge Form
+
+= button_tag "Challenge Another User", class: "challenge_button"
+
+= form_tag("/hangmen/challenge", method: "post") do
+  %table.table
+    %thead
+      %tr
+        %th User
+        %th Word
+    %tbody
+      %tr
+        %td= select_tag "person_1", options_from_collection_for_select(User.all, "id", "email")
+        %td= text_field_tag "word"
+  = submit_tag "Submit"
+
+:javascript
+   $(function() {
+     var i = 2
+     var add_row = function() {
+        alert("You are adding a new challenge");
+        var template = $("tbody tr").first();
+        var new_copy = template.clone();
+        new_copy.find('select').attr('name', 'person_' + i);
+        new_copy.find('input').attr('name', 'word' + i);
+        i = i + 1;
+        $('tbody').append(new_copy);
+      }
+     $('.challenge_button').click(add_row);
+   });
