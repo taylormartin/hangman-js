@@ -1,0 +1,15 @@
+%h1 Welcome
+
+%ul.entries
+
+:javascript
+  $(function() {
+    // This can't be reused
+    $('.entries').append( $('<li>This is coming from inline javascript</li>') );
+
+    attach_entry( $('.entries') );
+    attach_entry_with_content( $('.entries'), 'This is hardcoded');
+    attach_entry_with_content( $('.entries'), "#{@controller_content}" );
+    attach_entry_with_content( $('.entries'), "Game path is: #{hangman_path(Hangman.first)}" );
+  });
+

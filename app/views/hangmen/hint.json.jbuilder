@@ -1,0 +1,1 @@
+json.answer  @game.answer

@@ -1,0 +1,40 @@
+%p Look at the JS ...
+
+:javascript
+  // Run only once the document is ready
+  $(function() {
+    // var result;
+
+    // $.get("/hangmen/1.json", function(data) {
+    //   result = data;
+    //   console.log("callback data", result);
+    // });
+
+    // // This scope has access to result
+    // // but this most likely isn't set until the function above
+    // //   calls back
+    // console.log("initial data", result);
+
+    // // Hopefully has returned by now
+    // setTimeout(function() {
+    //   console.log("waiting data", result);
+    // }, 1000);
+
+    // Pass along data
+    //$.get("/hangmen/1.json", { cheat: true }, function(data) {
+    //  alert("Cheating: " + data.answer);
+    //});
+    //$.get("/hangmen/1.json", function(data) {
+    //  alert("Cheating: " + data.answer);
+    //});
+
+    // Explicit AJAX request - this is equivalent to the above
+    //$.ajax("/hangmen/1.json", {
+    //  data: { cheat: true },
+    //  type: 'GET',
+    //  success: function(data) {
+    //    alert("Cheating: " + data.answer);
+    //  },
+    //  error: function() { alert("something went wrong"); }
+    //});
+  });

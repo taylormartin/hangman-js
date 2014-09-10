@@ -6,6 +6,9 @@ class HangmenController < ApplicationController
   end
 
   def show
+    if params[:cheat]
+      raise "Stop it"
+    end
     @hangman = current_user.hangmen.find params[:id]
   end
 
@@ -29,4 +32,6 @@ class HangmenController < ApplicationController
     redirect_to hangmen_challenge_path, notice: "Challenge made!"
   end
 
+  def ajax_test
+  end
 end
